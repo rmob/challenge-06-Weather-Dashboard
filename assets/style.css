@@ -23,8 +23,8 @@ header {
    }
 
 #search-panel {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     border: 1px solid black;
     width: 15%;
     min-width: 200px;
@@ -57,21 +57,20 @@ header {
 #results {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    /* position: absolute; */
     top:0;
-    margin-top: 6rem;
+    margin-top: 1rem;
     border: 1px solid black;
     min-width: 58%;
     padding: 1rem 0;
     margin-bottom: 1rem;
     margin-left: 1rem;
     line-height: 1.5rem;
-    /* display: flex;
-    flex-direction: column; */
+   
 }
 
 #results p {
-    display: flex;
+    /* display: flex; */
     margin-left: 2.1rem;
     line-height: .4;
     font-size: 1.1rem;
@@ -80,9 +79,16 @@ header {
 
 .forecast-cards {
     display: flex;
+    /* justify-content: flex-end; */
+    flex-wrap: wrap;
     color: white;
     margin-left: 0;
 }
+
+/* #five-day h4 {
+    margin-left: 18%;
+
+} */
 
 #five-day {
     display: flex;
@@ -91,8 +97,7 @@ header {
     /* border: 1px solid black; */
     width: 60%;
     position: absolute;
-    top: 0;
-    margin-top: 19rem;
+    margin-left: 15%;
 
 }
 

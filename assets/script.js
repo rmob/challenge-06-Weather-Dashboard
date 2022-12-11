@@ -17,12 +17,12 @@ var day2El = document.getElementById('day2')
 var day3El = document.getElementById('day3')
 var day4El = document.getElementById('day4')
 var day5El = document.getElementById('day5')
-var pEl = document.querySelector('.location-btn')
+
 // var locationBtnEl = document.querySelector('p .location-btn')
 // var searchPanelBtn = document.querySelector('p')
 var cityNameEl = document.getElementById('city-nameEl')
 
-var loggedCity;
+
 var newCityCap;
 var latitude;
 var longitude;
@@ -38,7 +38,8 @@ var formSubmitHandler = function(event) {
     if (city) {
         getWeather(city);
         
-        loggedCity = document.createElement('p')
+        var loggedCity = document.createElement('p')
+        loggedCity.addEventListener('click', reloadData)
         var cityArray = city.split(' ')
         for (var i = 0; i < cityArray.length; i++) {
             
@@ -133,35 +134,36 @@ var getFiveDayForecast = function() {
 var displayForecast = function(data) {
    
 
-    for (var i = 0; i < 1; i++ ) {
+    for (var i = 0; i < 40; i+=8 ) {
         var unix_timestamp = data.list[i].dt;
         var date = new Date(unix_timestamp *1000);
-        document.getElementById('date'+[i+1]).innerHTML = dayjs(date).format('dddd </br> MMM D');
-        document.getElementById('icon'+[i+1]).src="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon +"@2x.png";
-        document.getElementById('temp'+[i+1]).innerHTML = 'Temp: ' + ~~(data.list[i].main.temp) + '°';
-        document.getElementById('wind'+[i+1]).innerHTML = 'Wind: ' + ~~(data.list[i].wind.humidity) + ' mph';
-        document.getElementById('humid'+[i+1]).innerHTML = 'Humidity: ' + ~~(data.list[i].wind.speed) + '%';
+        document.getElementById('date'+[i/8+1]).innerHTML = dayjs(date).format('dddd </br> MMM D');
+        document.getElementById('icon'+[i/8+1]).src="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon +"@2x.png";
+        document.getElementById('temp'+[i/8+1]).innerHTML = 'Temp: ' + ~~(data.list[i].main.temp) + '°';
+        document.getElementById('wind'+[i/8+1]).innerHTML = 'Wind: ' + ~~(data.list[i].wind.humidity) + ' mph';
+        document.getElementById('humid'+[i/8+1]).innerHTML = 'Humidity: ' + ~~(data.list[i].wind.speed) + '%';
         
 
     }
 
-    for (var i = 1; i < 5; i++ ) {
-        var unix_timestamp = data.list[i].dt;
-        var date = new Date(unix_timestamp *1000);
-        document.getElementById('date'+[i+1]).innerHTML = dayjs(date).format('dddd </br> MMM D');
-        document.getElementById('icon'+[i+1]).src="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon +"@2x.png";
-        document.getElementById('temp'+[i+1]).innerHTML = 'Temp: ' + ~~(data.list[i].main.temp) + '°';
-        document.getElementById('wind'+[i+1]).innerHTML = 'Wind: ' + ~~(data.list[i].wind.humidity) + ' mph';
-        document.getElementById('humid'+[i+1]).innerHTML = 'Humidity: ' + ~~(data.list[i].wind.speed) + '%';
+    // for (var i = 1; i < 5; i++ ) {
+    //     var unix_timestamp = data.list[i].dt;
+    //     var date = new Date(unix_timestamp *1000);
+    //     document.getElementById('date'+[i+1]).innerHTML = dayjs(date).format('dddd </br> MMM D');
+    //     document.getElementById('icon'+[i+1]).src="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon +"@2x.png";
+    //     document.getElementById('temp'+[i+1]).innerHTML = 'Temp: ' + ~~(data.list[i].main.temp) + '°';
+    //     document.getElementById('wind'+[i+1]).innerHTML = 'Wind: ' + ~~(data.list[i].wind.humidity) + ' mph';
+    //     document.getElementById('humid'+[i+1]).innerHTML = 'Humidity: ' + ~~(data.list[i].wind.speed) + '%';
         
-    }
+    // }
 
  
 }
 
 var reloadData = function (event) {
+    console.log('helo')
     event.preventDefault();
-    if (pEl){
+    
         city = this.textContent;
         city = city.toLowerCase()
         console.log(city)
@@ -180,7 +182,7 @@ var reloadData = function (event) {
 
         
      
-    }
+    
 
     inputEl.value = ' ';
 }
@@ -190,6 +192,6 @@ var reloadData = function (event) {
 
 
 submitBtn.addEventListener('click', formSubmitHandler);
-pEl.addEventListener('click', reloadData)
+
 
 
