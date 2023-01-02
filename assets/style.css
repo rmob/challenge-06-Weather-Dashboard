@@ -1,135 +1,126 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0 auto;
-   
+  margin: 0 auto;
 }
 
 header {
-    text-align: center;
-    background: linear-gradient(90deg, rgb(170, 157, 245), rgb(39, 39, 212));
-    padding: 10px;
-    font-weight: bolder;
-    color: white;
-    font-family: sans-serif;
+  text-align: center;
+  background: linear-gradient(90deg, rgb(170, 157, 245), rgb(39, 39, 212));
+  padding: 10px;
+  font-weight: bolder;
+  color: white;
+  font-family: sans-serif;
 }
 
-.main {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20%;
-   }
-
 #search-panel {
-    /* display: flex; */
-    /* flex-direction: column; */
-    border: 1px solid black;
-    width: 15%;
-    min-width: 200px;
-    margin: 1.25rem 1rem;
-    /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  width: 15%;
+  float: left;
+  clear: both;
+  min-width: 200px;
+  margin: 1.25rem 1rem;
+  position: fixed;
 }
 
 #search-panel p {
-    background-color: rgb(181, 186, 202);
-    margin: .5rem 1rem;
-    padding: .5rem;
-    border-radius: 5px;
-    text-align: center;
-    color: white;
+  background-color: rgb(181, 186, 202);
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  color: white;
 }
 
 #search-panel p:hover {
-    background-color: rgb(137, 122, 199);
-    cursor: pointer;
+  background-color: rgb(137, 122, 199);
+  cursor: pointer;
 }
 
-#search-panel h2, input, button {
-    margin: .5rem 1rem
+#search-panel h2,
+input,
+button {
+  margin: 0.5rem 1rem;
 }
 
 #search-panel input {
-    width: 85%;
+  width: 85%;
 }
 
 #results {
-    display: flex;
-    flex-direction: column;
-    /* position: absolute; */
-    top:0;
-    margin-top: 1rem;
-    border: 1px solid black;
-    min-width: 58%;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-    margin-left: 1rem;
-    line-height: 1.5rem;
-   
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  margin-top: 1rem;
+  border: 1px solid black;
+  min-width: 58%;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  margin-left: 25%;
+  line-height: 1.5rem;
 }
 
 #results p {
-    /* display: flex; */
-    margin-left: 2.1rem;
-    line-height: .4;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  display: flex;
+  margin-left: 2.1rem;
+  line-height: 0.4;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .forecast-cards {
-    display: flex;
-    /* justify-content: flex-end; */
-    flex-wrap: wrap;
-    color: white;
-    margin-left: 0;
+  display: flex;
+  /* justify-content: flex-end; */
+  flex-wrap: wrap;
+  color: white;
+  margin-left: 0;
+  margin-bottom: 1rem;
 }
-
-/* #five-day h4 {
-    margin-left: 18%;
-
-} */
 
 #five-day {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    /* border: 1px solid black; */
-    width: 60%;
-    position: absolute;
-    margin-left: 15%;
-
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 60%;
+  position: absolute;
+  margin-left: 22%;
 }
 
-#day1, #day2, #day3, #day4, #day5 {
-    /* width: 20%; */
-    margin: auto 1rem;
-    background-color: rgb(60, 67, 119);
-    padding: 1rem 1.5rem;
-
+#day1,
+#day2,
+#day3,
+#day4,
+#day5 {
+  margin: 1rem 1rem;
+  background-color: rgb(60, 67, 119);
+  padding: 1rem 1.5rem;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
+  margin-left: 2rem;
 }
 
 #city-nameEl {
-    margin-left: 2rem;
+  margin-left: 2rem;
 }
 
 button {
-    border: none;
-    border-radius: 3px;
-    padding: .3rem .5rem;
-    border: 1px solid white;
+  border: none;
+  border-radius: 3px;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid white;
 }
 
 button:hover {
-    border: 1px solid black;
+  border: 1px solid black;
 }
 
-
 h4 {
-    margin-bottom: 1rem;
-    margin-left: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }

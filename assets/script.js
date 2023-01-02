@@ -73,11 +73,15 @@ var getWeather = function() {
                 
             });
         } else {
-            var errMsg = document.createElement('p')
-            errMsg.textContent = 'Error: ' + response.statusText;
-            searchPanelEl.appendChild(errMsg)
+            // var errMsg = document.createElement('p')
+            // errMsg.textContent = 'Error: ' + response.statusText;
+            // searchPanelEl.appendChild(errMsg)
+            cityName.textContent = 'city not found'
+            
+
+
         }
-       
+        
         
     })
     .catch(function (error) {
@@ -92,13 +96,6 @@ var displayWeather = function(data) {
     cityName.textContent = newCityCap.trim()
     dateEl.textContent = date;
 
-    // var dateEl = document.createElement('p')
-    // var parentDiv = document.querySelector('ul').parentNode
-    // parentDiv.insertBefore(dateEl, listEl)
-    // dateEl.textContent = date
-
-    
-    // cityName.textContent = newCityCap + ' ' + date;
     tempEl.textContent = ~~(data.main.temp) + "°";
     humidEl.textContent = ~~(data.main.humidity) + "%";
     windEl.textContent = ~~(data.wind.speed) +" mph";
@@ -120,7 +117,7 @@ var getFiveDayForecast = function() {
                 displayForecast(data);
             });
         } else {
-            return
+            displayForecast(!data)
         }
         
     })
@@ -145,20 +142,12 @@ var displayForecast = function(data) {
         
 
     }
+}
 
-    // for (var i = 1; i < 5; i++ ) {
-    //     var unix_timestamp = data.list[i].dt;
-    //     var date = new Date(unix_timestamp *1000);
-    //     document.getElementById('date'+[i+1]).innerHTML = dayjs(date).format('dddd </br> MMM D');
-    //     document.getElementById('icon'+[i+1]).src="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon +"@2x.png";
-    //     document.getElementById('temp'+[i+1]).innerHTML = 'Temp: ' + ~~(data.list[i].main.temp) + '°';
-    //     document.getElementById('wind'+[i+1]).innerHTML = 'Wind: ' + ~~(data.list[i].wind.humidity) + ' mph';
-    //     document.getElementById('humid'+[i+1]).innerHTML = 'Humidity: ' + ~~(data.list[i].wind.speed) + '%';
-        
-    // }
+
 
  
-}
+
 
 var reloadData = function (event) {
     console.log('helo')

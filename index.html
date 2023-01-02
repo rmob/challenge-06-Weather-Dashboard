@@ -30,6 +30,7 @@
     <header>
         <h1>Weather Dashboard</h1>
     </header>
+    <div class="grid-container">
     <div class="container row">
         <aside id="search-panel" class="col-3">
             <h2>Search for a City</h2>
@@ -39,7 +40,7 @@
             </label>
         </aside>
         
-        <section id="results" class="col-9">
+        <section id="results" class="row col-9">
             <h3 id="city-nameEl"></h3>
             <p id="date-El"></p>
             <ul>
@@ -51,7 +52,7 @@
     </div>
     <div class="row">
         <!-- <div class="col-3"></div> -->
-        <section id="five-day" class="col-9">
+        <section id="five-day" class="col-12">
             <h4>5-Day Forecast:</h4>
             <div class="forecast-cards">
                 <div id="day1">
@@ -91,6 +92,7 @@
                 </div>
             </div>
         </section>
+        </div>
     
 </div>
     <!-- JavaScript Bundle with Popper -->
